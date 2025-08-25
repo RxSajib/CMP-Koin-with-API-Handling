@@ -28,4 +28,8 @@ class HomeViewModel constructor(
             mutableListOfPerson.update { list }
         }
     }
+
+    init {
+        provideListOfPerson()
+    }
 }

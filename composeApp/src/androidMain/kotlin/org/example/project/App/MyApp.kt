@@ -9,5 +9,6 @@ class MyApp : Application() {
         initKoin {
             this
         }
+
     }
 }

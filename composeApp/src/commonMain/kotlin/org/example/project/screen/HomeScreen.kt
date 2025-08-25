@@ -21,19 +21,19 @@ import org.example.project.component.dialog.LogoutDialog
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun HomeScreen(){
-    val viewmodel : HomeViewModel = koinViewModel()
+fun HomeScreen() {
+    val viewmodel: HomeViewModel = koinViewModel()
     val listOfPerson = viewmodel.personList.collectAsStateWithLifecycle()
 
-    LaunchedEffect(Unit){
-        viewmodel.provideListOfPerson()
+    LaunchedEffect(Unit) {
+
     }
 
     Surface {
         Scaffold { innerPadding ->
-            Box(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(10.dp)){
+            Box(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(10.dp)) {
                 LazyColumn {
-                    items(listOfPerson.value){
+                    items(listOfPerson.value) {
                         PersonItem(person = it)
                     }
                 }
@@ -41,7 +41,7 @@ fun HomeScreen(){
         }
     }
 
-    if(viewmodel.showDialog){
+    if (viewmodel.showDialog) {
         LogoutDialog { viewmodel.showDialog = false }
     }
 }
