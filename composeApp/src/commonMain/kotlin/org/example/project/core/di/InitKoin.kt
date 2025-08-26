@@ -8,7 +8,8 @@ fun initKoin(config: KoinAppDeclaration? = null) {
     startKoin {
         config?.invoke(this)
         modules(
-            LIstModule().module
+            LIstModule().module,
+                    KoinModule().module
         )
     }
 }

@@ -150,8 +150,8 @@ dependencies {
 dependencies {
     add("kspCommonMainMetadata", libs.koin.ksp.compiler)
 }
-
-/*project.tasks.withType(KotlinCompilationTask::class.java).configureEach {
+/*
+project.tasks.withType(KotlinCompilationTask::class.java).configureEach {
     if(name != "kspCommonMainKotlinMetadata") {
         dependsOn("kspCommonMainKotlinMetadata")
     }

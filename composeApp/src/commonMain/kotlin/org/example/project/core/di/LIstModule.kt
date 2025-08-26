@@ -1,5 +1,6 @@
 package org.example.project.core.di
 
+import io.ktor.client.HttpClient
 import org.example.project.data.API
 import org.example.project.data.APIResponse
 import org.example.project.screen.HomeViewModel
@@ -12,7 +13,7 @@ import org.koin.core.annotation.Single
 class LIstModule {
 
     @Factory(binds = [API::class])
-    fun proVideAPIResponse() : APIResponse = APIResponse()
+    fun proVideAPIResponse(@AuthOkHttpClint httpClient: HttpClient) : APIResponse = APIResponse(httpClient = httpClient)
 
     @KoinViewModel
     fun provideHomeViewModel(api: API) : HomeViewModel = HomeViewModel(api)
