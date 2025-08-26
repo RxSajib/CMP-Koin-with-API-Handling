@@ -90,6 +90,7 @@ kotlin {
 
             implementation("io.coil-kt.coil3:coil-compose:3.3.0")
             implementation("io.coil-kt.coil3:coil-network-okhttp:3.3.0")
+            implementation("io.github.khubaibkhan4:alert-kmp:2.0.0")
 
         }
         commonTest.dependencies {
@@ -100,6 +101,9 @@ kotlin {
             implementation(libs.kotlinx.coroutinesSwing)
 
             implementation(libs.ktor.client.okhttp)
+        }
+        nativeMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 

@@ -1,6 +1,9 @@
 package org.example.project.screen
 
+import Notify
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,16 +28,15 @@ fun HomeScreen() {
     val viewmodel: HomeViewModel = koinViewModel()
     val listOfPerson = viewmodel.personList.collectAsStateWithLifecycle()
 
-    LaunchedEffect(Unit) {
-
-    }
 
     Surface {
         Scaffold { innerPadding ->
             Box(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(10.dp)) {
                 LazyColumn {
                     items(listOfPerson.value) {
-                        PersonItem(person = it)
+                        PersonItem(person = it) { person ->
+                            Notify(message= person.emailAddress, duration=NotificationDuration.SHORT)
+                        }
                     }
                 }
             }

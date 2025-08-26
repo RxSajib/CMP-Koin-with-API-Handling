@@ -2,6 +2,7 @@ package org.example.project.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -29,9 +30,9 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-fun PersonItem(person: Person) {
+fun PersonItem(person: Person, onClick: (Person) -> Unit) {
     Box(
-        modifier = Modifier.fillMaxWidth().background(color = MaterialTheme.colorScheme.background)
+        modifier = Modifier.fillMaxWidth().clickable{onClick.invoke(person)}.background(color = MaterialTheme.colorScheme.background)
             .clip(shape = RoundedCornerShape(size = 10.dp))
     ) {
         Row(modifier = Modifier.fillMaxWidth().padding(10.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -72,7 +73,8 @@ fun PersonItemPreview() {
             name = "Sajib",
             emailAddress = "sajibroY206@gmail.com",
             profileImage = ""
-        )
+        ),
+        onClick = {}
     )
 
 }
