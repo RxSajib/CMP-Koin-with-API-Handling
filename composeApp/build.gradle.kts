@@ -87,11 +87,14 @@ kotlin {
 
             implementation(libs.jetbrains.compose.navigation)
             implementation(libs.kotlinx.serialization.json)
+            implementation("io.ktor:ktor-client-logging:3.1.3")
+            implementation("io.ktor:ktor-client-content-negotiation:3.1.3")
 
             implementation("io.coil-kt.coil3:coil-compose:3.3.0")
             implementation("io.coil-kt.coil3:coil-network-okhttp:3.3.0")
             implementation("io.github.khubaibkhan4:alert-kmp:2.0.0")
-
+            implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+            implementation("io.github.aakira:napier:2.7.1")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

@@ -19,11 +19,12 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import koinexample.composeapp.generated.resources.Res
 import koinexample.composeapp.generated.resources.compose_multiplatform
 import org.example.project.screen.HomeScreen
+import org.example.project.screen.PostScreen
 
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
-        HomeScreen()
+        PostScreen()
     }
 }
