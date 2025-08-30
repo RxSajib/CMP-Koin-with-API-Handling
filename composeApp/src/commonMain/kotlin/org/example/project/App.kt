@@ -20,11 +20,12 @@ import koinexample.composeapp.generated.resources.Res
 import koinexample.composeapp.generated.resources.compose_multiplatform
 import org.example.project.screen.HomeScreen
 import org.example.project.screen.PostScreen
+import org.example.project.screen.SignInScreen
 
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
-        PostScreen()
+        SignInScreen()
     }
 }

@@ -95,6 +95,9 @@ kotlin {
             implementation("io.github.khubaibkhan4:alert-kmp:2.0.0")
             implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
             implementation("io.github.aakira:napier:2.7.1")
+
+            implementation(libs.compottie.lite)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
